@@ -33,14 +33,16 @@
 
         // create a shape
         var geometry = new THREE.BoxGeometry(1, 1, 1);
+        // var geometry = new THREE.BoxGeometry(1000, 1000, 1000);
 
         var cubeMaterials = [
             new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/1.png'), side: THREE.DoubleSide}),
-            new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/2.png'), side: THREE.DoubleSide}),
-            new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/3.png'), side: THREE.DoubleSide}),
-            new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/4.png'), side: THREE.DoubleSide}),
-            new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/5.png'), side: THREE.DoubleSide}),
-            new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/6.png'), side: THREE.DoubleSide}),
+            // new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('img/2.png'), side: THREE.DoubleSide}),
+            new THREE.MeshLambertMaterial({map: new THREE.TextureLoader().load('img/2.png'), side: THREE.DoubleSide}),
+            new THREE.MeshPhongMaterial({map: new THREE.TextureLoader().load('img/3.png'), side: THREE.DoubleSide}),
+            new THREE.MeshLambertMaterial({map: new THREE.TextureLoader().load('img/4.png'), side: THREE.DoubleSide}),
+            new THREE.MeshPhongMaterial({map: new THREE.TextureLoader().load('img/5.png'), side: THREE.DoubleSide}),
+            new THREE.MeshLambertMaterial({map: new THREE.TextureLoader().load('img/6.png'), side: THREE.DoubleSide}),
         ]
 
         // create a material and add color to it
@@ -53,6 +55,14 @@
         scene.add(cube);
         camera.position.z = 3;
 
+        var ambientLight = new THREE.AmbientLight(0xFFFF00, 0.5);
+        // scene.add(ambientLight);
+        
+        var pointLight = new THREE.PointLight( 0xFFFFFF, 4, 50)
+        // scene.add(pointLight);
+        var spotLight = new THREE.SpotLight(0xFFFFFF, 4);
+        spotLight.position.set(10, 10, 10);
+        scene.add(spotLight);
         // logic
         var update = function() {
             cube.rotation.x += 0.01;   
