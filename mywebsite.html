@@ -62,6 +62,7 @@
     <script src="js/custom/showFloor.js"></script>
     <script src="js/custom/MainGate.js"></script>
     <script src="js/custom/ShowMainRoad.js"></script>
+    <script src="js/custom/showSquare.js"></script>
     <script>
         const objects = [];
         let raycaster;
@@ -226,14 +227,17 @@
 		// cubes1.castShadow = true;
 		// cubes1.receiveShadow = true;
 		scene.add( cubes1 );
-        camera.position.z = 400;
-        camera.position.x = 200;
+        camera.position.z = 200;
+        // camera.position.z = 400;
+        camera.position.x = 1200;
+        // camera.position.x = 200;
         camera.position.y = 10;
         // ================================================================ TEXT END ================================================================
 
         // makeBanner(scene);
         showMainGate(scene);
         showMainRoad(scene)
+        showSquare(scene);
 
         // rendering to html 
         renderer.render( scene, camera );
@@ -264,8 +268,8 @@
                 direction.x = Number( moveRight ) - Number( moveLeft );
                 direction.normalize(); // this ensures consistent movements in all directions
 
-                if ( moveForward || moveBackward ) velocity.z -= direction.z * 800.0 * delta;
-                if ( moveLeft || moveRight ) velocity.x -= direction.x * 800.0 * delta;
+                if ( moveForward || moveBackward ) velocity.z -= direction.z * 1800.0 * delta;
+                if ( moveLeft || moveRight ) velocity.x -= direction.x * 1800.0 * delta;
 
                 if ( onObject === true ) {
 
