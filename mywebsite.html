@@ -85,7 +85,7 @@
         // near — Camera frustum near plane.
         // far — Camera frustum far plane.
         var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.y = 20;
+        camera.position.y = 40;
         camera.position.x = 0;
         camera.position.z = 0;
         
@@ -114,6 +114,7 @@
         scene.add( controls.getObject() );
 
         const onKeyDown = function ( event ) {
+            console.log(event.code);
         switch ( event.code ) {
             case 'ArrowUp':
             case 'KeyW':
@@ -263,8 +264,8 @@
                 direction.x = Number( moveRight ) - Number( moveLeft );
                 direction.normalize(); // this ensures consistent movements in all directions
 
-                if ( moveForward || moveBackward ) velocity.z -= direction.z * 400.0 * delta;
-                if ( moveLeft || moveRight ) velocity.x -= direction.x * 400.0 * delta;
+                if ( moveForward || moveBackward ) velocity.z -= direction.z * 800.0 * delta;
+                if ( moveLeft || moveRight ) velocity.x -= direction.x * 800.0 * delta;
 
                 if ( onObject === true ) {
 
