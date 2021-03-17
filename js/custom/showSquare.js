@@ -8,6 +8,7 @@ function showSquare(scene) {
     square.position.z = 200;
     square.position.y = 4;
     scene.add( square );
+
     const squareGeometry1 = new THREE.CircleGeometry( 400, 150 );
     // var squareGeometry = new THREE.PlaneGeometry(200, 200, 100, 100);
     const squareMaterial1 = new THREE.MeshBasicMaterial( { color: 0xffffff, side: THREE.DoubleSide } );
@@ -41,15 +42,24 @@ function showSquareBoard(scene) {
     squareBoard.position.y = 5;
     scene.add( squareBoard );
 
-    const BannerBoardMaterial = new THREE.MeshBasicMaterial( { color: 0x008e3f } );
+    // const BannerBoardMaterial = new THREE.MeshBasicMaterial( { color: 0x008e3f } );
+    var BannerBoard = [
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/DirectionPlain.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('./img/DirectionPlain.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/DirectionPlain.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/DirectionPlain.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/DirectionBack.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/Direction.png'), side: THREE.DoubleSide}),
+    ]
+    var BannerBoardMaterial = new THREE.MeshFaceMaterial(BannerBoard);
     const BannerBoardGeometry = new THREE.Mesh( new THREE.BoxGeometry( 300, 250, 45 ), BannerBoardMaterial );
     BannerBoardGeometry.rotation.y = Math.PI / 2;
     BannerBoardGeometry.position.x = 1800;
     BannerBoardGeometry.position.y = 300;
     BannerBoardGeometry.position.z = 200;
     scene.add( BannerBoardGeometry );
-    
-    showText(scene);
+
+    // showText(scene);
 }
 
 
@@ -66,7 +76,7 @@ function showText(scene) {
             // bevelThickness: 2,
             // bevelSize: 1,
             // bevelEnabled: true
-        } 
+        }
         );
 
         textGeo.computeBoundingBox();
@@ -76,8 +86,8 @@ function showText(scene) {
 
         const text = new THREE.Mesh( textGeo, textMaterial );
         text.rotation.y = -Math.PI / 2;
-        text.position.x = 1700;
-        text.position.y = 330;
+        text.position.x = 1780;
+        text.position.y = 400;
         text.position.z = 100;
 
         // mesh.castShadow = true;
@@ -93,7 +103,7 @@ function showText(scene) {
             // bevelThickness: 2,
             // bevelSize: 1,
             // bevelEnabled: true
-        } 
+        }
         );
 
         textGeo1.computeBoundingBox();
@@ -101,7 +111,7 @@ function showText(scene) {
 
         const text1 = new THREE.Mesh( textGeo1, textMaterial );
         text1.rotation.y = -Math.PI / 2;
-        text1.position.x = 1700;
+        text1.position.x = 1780;
         text1.position.y = 270;
         text1.position.z = 100;
 
@@ -119,7 +129,7 @@ function showText(scene) {
             // bevelThickness: 2,
             // bevelSize: 1,
             // bevelEnabled: true
-        } 
+        }
         );
 
         textGeo2.computeBoundingBox();
@@ -127,7 +137,7 @@ function showText(scene) {
 
         const text2 = new THREE.Mesh( textGeo2, textMaterial );
         text2.rotation.y = -Math.PI / 2;
-        text2.position.x = 1700;
+        text2.position.x = 1780;
         text2.position.y = 200;
         text2.position.z = 100;
 
@@ -140,9 +150,9 @@ function showText(scene) {
 
 function showTrees(scene) {
     const cylinderGeometry = new THREE.CylinderGeometry( 2, 5, 100, 32 );
-    const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x2f1917} );    
+    const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x2f1917} );
     const treeGeometry = new THREE.CylinderGeometry( 10, 30, 100, 32 );
-    const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );    
+    const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );
 
     for (let i = 1; i < 10; i++) {
         const cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );

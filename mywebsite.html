@@ -71,6 +71,7 @@
     <script src="js/custom/ShowMainRoad.js"></script>
     <script src="js/custom/showSquare.js"></script>
     <script src="js/custom/boundryWall.js"></script>
+    <script src="js/custom/showSkills.js"></script>
     <script>
         const objects = [];
         let raycaster;
@@ -87,6 +88,7 @@
 		const color = new THREE.Color();
         // creating a screne
         var scene = new THREE.Scene();
+        // scene.background = new THREE.Color( 0x0000000 );
         scene.background = new THREE.Color( 0xbcfbf7 );
         // creating a camera for view
         // fov — Camera frustum vertical field of view.
@@ -245,10 +247,10 @@
 		// cubes1.castShadow = true;
 		// cubes1.receiveShadow = true;
 		scene.add( cubes1 );
-        // camera.position.z = 200;
-        camera.position.z = 400;
-        // camera.position.x = 1200;
-        camera.position.x = 200;
+        camera.position.z = -100;
+        // camera.position.z = 400;
+        camera.position.x = 1800;
+        // camera.position.x = 200;
         camera.position.y = 10;
         // ================================================================ TEXT END ================================================================
 
@@ -257,6 +259,7 @@
         showMainRoad(scene)
         showSquare(scene);
         showBoundryWall(scene);
+        showSkills(scene);
 
         // rendering to html 
         renderer.render( scene, camera );

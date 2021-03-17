@@ -3,13 +3,14 @@ function showMainRoad(scene) {
     // forward one
     var roadGeometry = new THREE.PlaneGeometry(1800, 200, 100, 100);
     var roadGeometryWhite = new THREE.PlaneGeometry(1800, 250, 100, 100);
-    var roadGeometry1 = new THREE.PlaneGeometry(200, 3500, 100, 100);
+    var roadGeometry1 = new THREE.PlaneGeometry(200, 3800, 100, 100);
     var roadGeometryWhite1 = new THREE.PlaneGeometry(250, 3500, 100, 100);
 
     roadGeometry.rotateX( - Math.PI / 2 );
     roadGeometryWhite.rotateX( - Math.PI / 2 );
     roadGeometry1.rotateX( - Math.PI / 2 );
     roadGeometryWhite1.rotateX( - Math.PI / 2 );
+
     const roadMaterial = new THREE.MeshBasicMaterial( {color: 0x4c5161, side: THREE.DoubleSide} );
     const roadMaterialWhite = new THREE.MeshBasicMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
     const road = new THREE.Mesh(roadGeometry, roadMaterial);
@@ -113,7 +114,7 @@ function showRoadWhiteLines(scene){
         road.position.y = 3;
         scene.add(road);
     }
-    for (let i = 0 ; i < 25; i++){
+    for (let i = 0 ; i < 29; i++){
         const road1 = new THREE.Mesh(roadGeometry1, roadMaterial);
         road1.position.x = 1800;
         road1.position.z = -1800 + 150 * i;
