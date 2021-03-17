@@ -44,12 +44,12 @@ function showSquareBoard(scene) {
 
     // const BannerBoardMaterial = new THREE.MeshBasicMaterial( { color: 0x008e3f } );
     var BannerBoard = [
-        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/DirectionPlain.png'), side: THREE.DoubleSide}),
-        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('./img/DirectionPlain.png'), side: THREE.DoubleSide}),
-        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/DirectionPlain.png'), side: THREE.DoubleSide}),
-        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/DirectionPlain.png'), side: THREE.DoubleSide}),
-        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/DirectionBack.png'), side: THREE.DoubleSide}),
-        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/Direction.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/directionPlain.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('./img/directionPlain.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/directionPlain.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/directionPlain.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/directionBack.png'), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('../../img/direction.png'), side: THREE.DoubleSide}),
     ]
     var BannerBoardMaterial = new THREE.MeshFaceMaterial(BannerBoard);
     const BannerBoardGeometry = new THREE.Mesh( new THREE.BoxGeometry( 300, 250, 45 ), BannerBoardMaterial );

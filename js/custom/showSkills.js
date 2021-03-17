@@ -1,71 +1,71 @@
 const skills = [
     {
         name: 'React Native',
-        image: '../../img/Skills/react native.png'
+        image: '../../img/skills/react native.png'
     },
     {
         name: 'ReactJs',
-        image: '../../img/Skills/react.png'
+        image: '../../img/skills/react.png'
     },
     {
         name: 'Angular',
-        image: '../../img/Skills/angular.png'
+        image: '../../img/skills/angular.png'
     },
     {
         name: 'Ionic',
-        image: '../../img/Skills/ionic.png'
+        image: '../../img/skills/ionic.png'
     },
     {
         name: 'Java',
-        image: '../../img/Skills/java.png'
+        image: '../../img/skills/java.png'
     },
     {
         name: 'Python',
-        image: '../../img/Skills/python.png'
+        image: '../../img/skills/python.png'
     },
     {
         name: 'Flask',
-        image: '../../img/Skills/flask.png'
+        image: '../../img/skills/flask.png'
     },
     {
         name: 'Django',
-        image: '../../img/Skills/django.png'
+        image: '../../img/skills/django.png'
     },
     {
         name: 'Sql',
-        image: '../../img/Skills/sql.png'
+        image: '../../img/skills/sql.png'
     },
     {
         name: 'Node',
-        image: '../../img/Skills/node.png'
+        image: '../../img/skills/node.png'
     },
     {
         name: 'mongodDb',
-        image: '../../img/Skills/mongodb.png'
+        image: '../../img/skills/mongodb.png'
     },
     {
         name: 'PS',
-        image: '../../img/Skills/PS.png'
+        image: '../../img/skills/PS.png'
     },
     {
         name: 'AI',
-        image: '../../img/Skills/AI.png'
+        image: '../../img/skills/AI.png'
     },
     {
         name: 'C++',
-        image: '../../img/Skills/cpp.png'
+        image: '../../img/skills/cpp.png'
     },
     {
         name: 'GIT',
-        image: '../../img/Skills/git.png'
+        image: '../../img/skills/git.png'
     },
     {
         name: 'ReactJs',
-        image: '../../img/Skills/6.png'
+        image: '../../img/skills/6.png'
     },
     {
         name: 'ReactJs',
-        image: '../../img/Skills/6.png'
+        image: '../../img/skills/6.png'
     },
 ];
 
@@ -108,10 +108,10 @@ function showCementedGround(scene) {
 
 function showSkillsBanner(scene) {
     const cylinderGeometry = new THREE.CylinderGeometry( 2, 5, 100, 32 );
-    const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x4c5161} );    
+    const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x4c5161} );
     const treeGeometry = new THREE.CylinderGeometry( 10, 30, 100, 32 );
-    const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );    
-    
+    const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );
+
 
     for (let i = 1; i < skills.length; i++) {
         if (i <= 9) {
@@ -162,9 +162,9 @@ function showSkillsBanner(scene) {
 
 function showTrees(scene) {
     const cylinderGeometry = new THREE.CylinderGeometry( 2, 5, 100, 32 );
-    const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x2f1917} );    
+    const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x2f1917} );
     const treeGeometry = new THREE.CylinderGeometry( 10, 30, 100, 32 );
-    const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );    
+    const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );
 
     for (let i = 1; i < 10; i++) {
         const cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
@@ -204,5 +204,5 @@ function showEnd(scene) {
     skillBoard.position.x = 1600;
     skillBoard.position.z = 1000;
     skillBoard.position.y = 80;
-    scene.add( skillBoard);   
+    scene.add( skillBoard);
 }
