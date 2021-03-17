@@ -15,6 +15,12 @@
 			height: 100%;
 			background-color: rgba(0,0,0,0.5);
 		}
+        #ModeButton {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1000;   
+        }
 
 		#instructions {
 			width: 100%;
@@ -47,6 +53,7 @@
     </style>
 </head>
 <body>
+    <!-- <button click="changeMode(scene)" id="ModeButton">Night Mode</button> -->
     <div id="blocker">
 		<div id="instructions">
 			<span style="font-size:36px; font-weight: bold;">Click to play</span>
@@ -63,6 +70,7 @@
     <script src="js/custom/MainGate.js"></script>
     <script src="js/custom/ShowMainRoad.js"></script>
     <script src="js/custom/showSquare.js"></script>
+    <script src="js/custom/boundryWall.js"></script>
     <script>
         const objects = [];
         let raycaster;
@@ -93,6 +101,16 @@
         // creating a renderer 
         var renderer = new THREE.WebGLRenderer(); 
         renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // handling change in screen size 
+        window.addEventListener('resize', function(){
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            renderer.setSize(width, height);
+            // to keep the aspect ratior of camera
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix(); 
+        });
 
         // added controls
         var controls =  new THREE.PointerLockControls( camera, document.body );
@@ -227,10 +245,10 @@
 		// cubes1.castShadow = true;
 		// cubes1.receiveShadow = true;
 		scene.add( cubes1 );
-        camera.position.z = 200;
-        // camera.position.z = 400;
-        camera.position.x = 1200;
-        // camera.position.x = 200;
+        // camera.position.z = 200;
+        camera.position.z = 400;
+        // camera.position.x = 1200;
+        camera.position.x = 200;
         camera.position.y = 10;
         // ================================================================ TEXT END ================================================================
 
@@ -238,6 +256,7 @@
         showMainGate(scene);
         showMainRoad(scene)
         showSquare(scene);
+        showBoundryWall(scene);
 
         // rendering to html 
         renderer.render( scene, camera );
