@@ -60,18 +60,26 @@ const skills = [
         image: '../../img/skills/git.png'
     },
     {
-        name: 'ReactJs',
-        image: '../../img/skills/6.png'
+        name: 'GIT',
+        image: '../../img/skills/git.png'
     },
     {
-        name: 'ReactJs',
-        image: '../../img/skills/6.png'
+        name: 'GIT',
+        image: '../../img/skills/git.png'
     },
+    {
+        name: 'GIT',
+        image: '../../img/skills/git.png'
+    },
+    // {
+    //     name: 'GIT',
+    //     image: '../../img/skills/git.png'
+    // },
 ];
 
 
 function showSkills(scene) {
-    // showTrees(scene);
+    showSmallTrees(scene);
     showCementedGround(scene);
     showSkillsBanner(scene);
     // showEnd(scene);
@@ -113,11 +121,11 @@ function showSkillsBanner(scene) {
     const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );
 
 
-    for (let i = 1; i < skills.length; i++) {
-        if (i <= 9) {
+    for (let i = 0; i < skills.length; i++) {
+        if (i < 9) {
             const cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
             cylinder.position.x = 1600;
-            cylinder.position.z = -100 + (-200) * i;
+            cylinder.position.z = -100 + (-200) * (i + 1);
             scene.add( cylinder);
             let skillBoardImg = [
                 new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load(skills[i].image), side: THREE.DoubleSide}),
@@ -131,13 +139,13 @@ function showSkillsBanner(scene) {
             const skillBoard = new THREE.Mesh(new THREE.BoxGeometry(10, 80, 150), skillBoardMaterial);
             skillBoard.rotation.y = 100;
             skillBoard.position.x = 1600;
-            skillBoard.position.z = -100 + -200 * i;
+            skillBoard.position.z = -100 + -200 * (i + 1);
             skillBoard.position.y = 80;
             scene.add( skillBoard);
         } else {
             const cylinder2 = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
             cylinder2.position.x = 2000;
-            cylinder2.position.z = -100 + (-200) * (i - 9);
+            cylinder2.position.z = -100 + (-200) * (i - 8);
             scene.add( cylinder2);
             let skillBoardImg = [
                 new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load(skills[i].image), side: THREE.DoubleSide}),
@@ -151,43 +159,13 @@ function showSkillsBanner(scene) {
             const skillBoard = new THREE.Mesh(new THREE.BoxGeometry(10, 80, 150), skillBoardMaterial);
             skillBoard.rotation.y = 180;
             skillBoard.position.x = 2000;
-            skillBoard.position.z = -100 + -200 * (i - 9);
+            skillBoard.position.z = -100 + (-200) * (i - 8);
             skillBoard.position.y = 80;
             scene.add( skillBoard);
         }
     }
 }
 
-
-
-function showTrees(scene) {
-    const cylinderGeometry = new THREE.CylinderGeometry( 2, 5, 100, 32 );
-    const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x2f1917} );
-    const treeGeometry = new THREE.CylinderGeometry( 10, 30, 100, 32 );
-    const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );
-
-    for (let i = 1; i < 10; i++) {
-        const cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-        cylinder.position.x = 1500;
-        cylinder.position.z = -100 + (-100) * i;
-        scene.add( cylinder);
-        const cylinder2 = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-        cylinder2.position.x = 2200;
-        cylinder2.position.z = -100 + (-100) * i;
-        scene.add( cylinder2);
-
-        const tree = new THREE.Mesh( treeGeometry, treeMaterial );
-        tree.position.x = 1500;
-        tree.position.z = -100 + -100 * i;
-        tree.position.y = 80;
-        scene.add( tree);
-        const tree2 = new THREE.Mesh( treeGeometry, treeMaterial );
-        tree2.position.x = 2200;
-        tree2.position.z = -100 + (-100) * i;
-        tree2.position.y = 80;
-        scene.add( tree2 );
-    }
-}
 
 function showEnd(scene) {
     let skillBoardImg = [
@@ -205,4 +183,36 @@ function showEnd(scene) {
     skillBoard.position.z = 1000;
     skillBoard.position.y = 80;
     scene.add( skillBoard);
+}
+
+
+function showSmallTrees(scene) {
+    const cylinderGeometry = new THREE.CylinderGeometry( 1, 3, 50, 32 );
+    const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x2f1917} );
+    const treeGeometry = new THREE.CylinderGeometry( 5, 10, 30, 32 );
+    const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );
+
+    for (let i = 1; i < 36; i++) {
+        const cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+        cylinder.position.x = 1510;
+        cylinder.position.z = -150 + (-50) * i;
+        cylinder.position.y = 10;
+        scene.add( cylinder);
+        const cylinder2 = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+        cylinder2.position.x = 2090;
+        cylinder2.position.z = -150 + (-50) * i;
+        cylinder2.position.y = 10;
+        scene.add( cylinder2);
+
+        const tree = new THREE.Mesh( treeGeometry, treeMaterial );
+        tree.position.x = 1510;
+        tree.position.z = -150 + -50 * i;
+        tree.position.y = 30;
+        scene.add( tree);
+        const tree2 = new THREE.Mesh( treeGeometry, treeMaterial );
+        tree2.position.x = 2090;
+        tree2.position.z = -150 + (-50) * i;
+        tree2.position.y = 30;
+        scene.add( tree2 );
+    }
 }
