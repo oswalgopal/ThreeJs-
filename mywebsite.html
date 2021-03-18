@@ -308,7 +308,7 @@
                 controls.getObject().position.y += ( velocity.y * delta ); // new behavior
                 controls.getObject().position.y = 50;
                 if ( controls.getObject().position.y < 50 ) {
-
+                    console.log('called this');
                     velocity.y = 0;
                     controls.getObject().position.y = 100;
 
