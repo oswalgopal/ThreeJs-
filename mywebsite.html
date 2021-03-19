@@ -72,6 +72,7 @@
     <script src="js/custom/showSquare.js"></script>
     <script src="js/custom/boundryWall.js"></script>
     <script src="js/custom/showSkills.js"></script>
+    <script src="js/custom/sound.js"></script>
     <script>
         const objects = [];
         let raycaster;
@@ -98,8 +99,7 @@
         var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.y = 40;
         camera.position.x = 0;
-        camera.position.z = 0;
-        
+        camera.position.z = 0;        
         // creating a renderer 
         var renderer = new THREE.WebGLRenderer(); 
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -126,6 +126,7 @@
 		controls.addEventListener( 'lock', function () {
 			instructions.style.display = 'none';
 			blocker.style.display = 'none';
+            playSound(camera, controls);
 		} );
 
 		controls.addEventListener( 'unlock', function () {
@@ -140,21 +141,25 @@
             case 'ArrowUp':
             case 'KeyW':
                 moveForward = true;
+                playWalkSound(camera);
                 break;
 
             case 'ArrowLeft':
             case 'KeyA':
                 moveLeft = true;
+                playWalkSound(camera);
                 break;
 
             case 'ArrowDown':
             case 'KeyS':
                 moveBackward = true;
+                playWalkSound(camera);
                 break;
 
             case 'ArrowRight':
             case 'KeyD':
                 moveRight = true;
+                playWalkSound(camera);
                 break;
 
             case 'Space':

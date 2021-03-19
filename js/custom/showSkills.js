@@ -187,7 +187,7 @@ function showEnd(scene) {
 
 
 function showSmallTrees(scene) {
-    const cylinderGeometry = new THREE.CylinderGeometry( 1, 3, 50, 32 );
+    const cylinderGeometry = new THREE.CylinderGeometry( 1, 3, 40, 32 );
     const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x2f1917} );
     const treeGeometry = new THREE.CylinderGeometry( 5, 10, 30, 32 );
     const treeMaterial = new THREE.MeshBasicMaterial( {color: 0x0c5c05} );
@@ -207,12 +207,12 @@ function showSmallTrees(scene) {
         const tree = new THREE.Mesh( treeGeometry, treeMaterial );
         tree.position.x = 1510;
         tree.position.z = -150 + -50 * i;
-        tree.position.y = 30;
+        tree.position.y = 35;
         scene.add( tree);
         const tree2 = new THREE.Mesh( treeGeometry, treeMaterial );
         tree2.position.x = 2090;
         tree2.position.z = -150 + (-50) * i;
-        tree2.position.y = 30;
+        tree2.position.y = 35;
         scene.add( tree2 );
     }
 }
