@@ -50,5 +50,9 @@ function showBoundryWall(scene) {
         cylinder8.position.z = 275 + 50 * i;
         cylinder8.position.y = 20;
         scene.add( cylinder8);
+
+        // for border 2
+
+
     }
 }

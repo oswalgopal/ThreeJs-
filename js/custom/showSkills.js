@@ -274,6 +274,19 @@ function showStreetLamp(scene) {
         scene.add( lampLight1);
 
 
+        // const width = 10;
+        // const height = 10;
+        // const intensity = 1;
+        // const rectLight = new THREE.RectAreaLight( 0xffffff, intensity,  width, height );
+        // rectLight.position.set( 1535, -100 + (-100) * i, 105 );
+        // rectLight.lookAt( 1600, -100 + (-100) * i, 105 );
+        // scene.add( rectLight )
+
+        // const rectLightHelper = new THREE.RectAreaLightHelper( rectLight );
+        // rectLight.add( rectLightHelper );
+
+
+
         // const cylinder3 = new THREE.Mesh( cylinderGeometry1, cylinderMaterial );
         // cylinder3.position.x = 1510;
         // cylinder3.position.z = -100 + (-100) * i;

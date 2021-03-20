@@ -65,6 +65,8 @@
 	</div>
     <script src="js/three.min.js"></script>
     <script src="js/PointerLockControls.js"></script>
+    <!-- <script src="js/jsm/helpers/RectAreaLightHelper.js"></script> -->
+    <!-- <script src="js/jsm/lights/RectAreaLightUniformsLib.js"></script> -->
     <script src="js/custom/Banner.js"></script>
     <script src="js/custom/showFloor.js"></script>
     <script src="js/custom/MainGate.js"></script>
@@ -73,6 +75,8 @@
     <script src="js/custom/boundryWall.js"></script>
     <script src="js/custom/showSkills.js"></script>
     <script src="js/custom/sound.js"></script>
+    <script src="js/custom/showProjects.js"></script>
+    
     <script>
         const objects = [];
         let raycaster;
@@ -96,7 +100,7 @@
         // aspect — Camera frustum aspect ratio.
         // near — Camera frustum near plane.
         // far — Camera frustum far plane.
-        var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 5000);
         camera.position.y = 40;
         camera.position.x = 0;
         camera.position.z = 0;        
@@ -252,7 +256,7 @@
 		// cubes1.castShadow = true;
 		// cubes1.receiveShadow = true;
 		scene.add( cubes1 );
-        camera.position.z = -100;
+        camera.position.z = 500;
         // camera.position.z = 400;
         camera.position.x = 1800;
         // camera.position.x = 200;
@@ -265,6 +269,13 @@
         showSquare(scene);
         showBoundryWall(scene);
         showSkills(scene);
+        showProjects(scene);
+
+        camera.position.z = 500;
+        // camera.position.z = 400;
+        camera.position.x = 1800;
+        // camera.position.x = 200;
+        camera.position.y = 10;
 
         // rendering to html 
         renderer.render( scene, camera );
