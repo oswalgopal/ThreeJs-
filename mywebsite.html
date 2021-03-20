@@ -120,6 +120,7 @@
 
         // added controls
         var controls =  new THREE.PointerLockControls( camera, document.body );
+        controls.getObject().position.y = 50; // for high camera
         const blocker = document.getElementById( 'blocker' );
 		const instructions = document.getElementById( 'instructions' );
 
@@ -260,7 +261,7 @@
         // camera.position.z = 400;
         camera.position.x = 1800;
         // camera.position.x = 200;
-        camera.position.y = 10;
+        camera.position.y = 50; // for high camera
         // ================================================================ TEXT END ================================================================
 
         // makeBanner(scene);
@@ -270,12 +271,6 @@
         showBoundryWall(scene);
         showSkills(scene);
         showProjects(scene);
-
-        camera.position.z = 500;
-        // camera.position.z = 400;
-        camera.position.x = 1800;
-        // camera.position.x = 200;
-        camera.position.y = 10;
 
         // rendering to html 
         renderer.render( scene, camera );
@@ -319,8 +314,8 @@
                 controls.moveRight( - velocity.x * delta );
                 controls.moveForward( - velocity.z * delta );
 
-                controls.getObject().position.y += ( velocity.y * delta ); // new behavior
-
+                controls.getObject().position.y += ( velocity.y * 2 * delta ); // new behavior
+                controls.getObject().position.y = 50; // for high camera
                 if ( controls.getObject().position.y < 10 ) {
 
                     velocity.y = 0;
