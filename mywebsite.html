@@ -76,6 +76,7 @@
     <script src="js/custom/showSkills.js"></script>
     <script src="js/custom/sound.js"></script>
     <script src="js/custom/showProjects.js"></script>
+    <script src="js/custom/showAbout.js"></script>
     
     <script>
         const objects = [];
@@ -257,10 +258,11 @@
 		// cubes1.castShadow = true;
 		// cubes1.receiveShadow = true;
 		scene.add( cubes1 );
-        camera.position.z = 500;
-        // camera.position.z = 400;
-        camera.position.x = 1800;
-        // camera.position.x = 200;
+        // camera.position.z = 200;
+        // camera.position.z = 600;
+        camera.position.z = -(300 + 50 * 53);
+        // camera.position.x = 2000;
+        camera.position.x = 200;
         camera.position.y = 50; // for high camera
         // ================================================================ TEXT END ================================================================
 
@@ -271,6 +273,7 @@
         showBoundryWall(scene);
         showSkills(scene);
         showProjects(scene);
+        showAbout(scene);
 
         // rendering to html 
         renderer.render( scene, camera );

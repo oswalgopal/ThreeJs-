@@ -83,6 +83,7 @@ function showSkills(scene) {
     showCementedGround(scene);
     showSkillsBanner(scene);
     showStreetLamp(scene);
+    showRoadText(scene);
     // showEnd(scene);
 }
 
@@ -309,4 +310,39 @@ function showStreetLamp(scene) {
         // tree2.position.y = 35;
         // scene.add( tree2 );
     }
+}
+
+
+function showRoadText(scene){
+    const textLoader = new THREE.FontLoader();
+    textLoader.load( 'fonts/helvetiker_bold.typeface.json', function ( font ) {
+
+    const textGeo = new THREE.TextGeometry( "MY SKILLS", {
+        font: font,
+        size: 15,
+        height: 5,
+        // curveSegments: 12,
+        // bevelThickness: 2,
+        // bevelSize: 1,
+        // bevelEnabled: true
+    } 
+    );
+
+    textGeo.computeBoundingBox();
+    // const centerOffset = - 0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+
+    const textMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff,
+        // specular: 0xffffff
+    } );
+
+    const text = new THREE.Mesh( textGeo, textMaterial );
+    text.rotation.x = (Math.PI  * 3 / 2) - 150;
+    text.position.x = 1750;
+    text.position.y = 10;
+    text.position.z = -200;
+
+    // mesh.castShadow = true;
+    // mesh.receiveShadow = true;
+    scene.add( text );
+    });
 }
