@@ -54,7 +54,9 @@ function showBoundryWall(scene) {
         cylinder8.position.z = 275 + 50 * i;
         cylinder8.position.y = 20;
         scene.add( cylinder8);
+    }
 
+    for (let i = 1; i < 60; i++) {
         // for border 2
 
         const cylinder9 = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
@@ -104,5 +106,69 @@ function showBoundryWall(scene) {
         cylinder16.position.y = 20;
         scene.add( cylinder16);
 
+        // border 4
+        addBorder4(scene);
+    }
+}
+
+function addBorder4(scene) {
+    for (let i = 1; i < 62; i++) {
+    const cylinderGeometry = new THREE.CylinderGeometry( 3, 3, 50, 32 );
+    const cylinderGeometry1 = new THREE.CylinderGeometry( 2, 2, 50, 32 );
+    cylinderGeometry1.rotateX(Math.PI / 2);
+    const cylinderGeometry2 = new THREE.CylinderGeometry( 2, 2, 50, 32 );
+    cylinderGeometry2.rotateX(Math.PI / 2);
+    cylinderGeometry2.rotateZ(Math.PI / 2);
+    cylinderGeometry2.rotateY(Math.PI / 2);
+    const cylinderMaterial = new THREE.MeshBasicMaterial( {color: 0x6b7d8d} );    
+    const cylinderMaterial1 = new THREE.MeshBasicMaterial( {color: 0x414e5e} );  
+
+    const cylinder17 = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+        cylinder17.position.x = 400 + 50 * 59;
+        cylinder17.position.z = -(-100 + 50 * i);
+        scene.add( cylinder17);
+
+        const cylinder18 = new THREE.Mesh( cylinderGeometry1, cylinderMaterial1 );
+        cylinder18.position.x = 400 + 50 * 59;
+        cylinder18.position.z = - (-125 + 50 * i);
+        cylinder18.position.y = 10;
+        scene.add( cylinder18);
+
+        const cylinder19 = new THREE.Mesh( cylinderGeometry1, cylinderMaterial1);
+        cylinder19.position.x = 400 + 50 * 59;
+        cylinder19.position.z = - (-125 + 50 * i);
+        cylinder19.position.y = 15;
+        scene.add( cylinder19);
+
+        const cylinder20 = new THREE.Mesh( cylinderGeometry1, cylinderMaterial1 );
+        cylinder20.position.x = 400 + 50 * 59;
+        cylinder20.position.z = - (-125 + 50 * i);
+        cylinder20.position.y = 20;
+        scene.add( cylinder20);
+
+        // border 4 part 2
+
+        const cylinder21 = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+        cylinder21.position.x = 400 + 50 * 59;
+        cylinder21.position.z = (-100 + 50 * i);
+        scene.add( cylinder21);
+
+        const cylinder22 = new THREE.Mesh( cylinderGeometry1, cylinderMaterial1 );
+        cylinder22.position.x = 400 + 50 * 59;
+        cylinder22.position.z = (-125 + 50 * i);
+        cylinder22.position.y = 10;
+        scene.add( cylinder22);
+
+        const cylinder23 = new THREE.Mesh( cylinderGeometry1, cylinderMaterial1);
+        cylinder23.position.x = 400 + 50 * 59;
+        cylinder23.position.z = (-125 + 50 * i);
+        cylinder23.position.y = 15;
+        scene.add( cylinder23);
+
+        const cylinder24 = new THREE.Mesh( cylinderGeometry1, cylinderMaterial1 );
+        cylinder24.position.x = 400 + 50 * 59;
+        cylinder24.position.z = (-125 + 50 * i);
+        cylinder24.position.y = 20;
+        scene.add( cylinder24);
     }
 }
